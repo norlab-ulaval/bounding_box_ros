@@ -1,0 +1,7 @@
+<launch>
+	<node pkg="bounding_box_ros" type="bounding_box_ros_node" name="bounding_box_node" output="screen" >
+		<remap from="cloud_in" to="rear_lidars_scan"/>
+		<remap from="cloud_out" to="rear_lidars_scan_bbox"/>
+		<param name="input_filters_config" value="$(find bounding_box_ros)/params/realtime_input_filters.yaml"/>
+	</node>
+</launch>
