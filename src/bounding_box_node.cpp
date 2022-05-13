@@ -28,7 +28,7 @@ int main(int argc, char** argv)
     newCloud.store(false);
 
     std::string inputFiltersConfigFilePath;
-    nodeHandle.getParam("/bounding_box_node/input_filters_config", inputFiltersConfigFilePath);
+    nodeHandle.getParam(ros::this_node::getName()+"/input_filters_config", inputFiltersConfigFilePath);
 
     std::ifstream ifs(inputFiltersConfigFilePath);
     PM::DataPointsFilters inputFilters = PM::DataPointsFilters(ifs);
